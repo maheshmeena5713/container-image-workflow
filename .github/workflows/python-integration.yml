@@ -1,9 +1,7 @@
 name: Python Integration Workflow
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
 
 jobs:
   test:
@@ -22,7 +20,7 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run Basic Check
+      - name: Run Application Check
         run: |
           python main.py &
           sleep 5
